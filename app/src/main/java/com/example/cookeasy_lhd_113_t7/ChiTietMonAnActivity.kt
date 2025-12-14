@@ -1,4 +1,3 @@
-<!-- filepath: d:\AndroidStudioProjects\CookEasy_LHD_113_T7\app\src\main\java\com\example\cookeasy_lhd_113_t7\ChiTietMonAnActivity.kt -->
 package com.example.cookeasy_lhd_113_t7
 
 import android.os.Bundle
@@ -28,7 +27,7 @@ class ChiTietMonAnActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.btnXoa).setOnClickListener {
-            // Show delete dialog
+            // Show confirmation dialog
         }
     }
 }

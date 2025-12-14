@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#F5F5F5">
 
     <!-- Header Orange -->
     <RelativeLayout
+        android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="#FF9800"
@@ -18,7 +18,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@android:drawable/ic_menu_revert"
-            android:tint="#FFFFFF"
+            app:tint="#FFFFFF"
             android:padding="12dp"
             android:clickable="true"
             android:focusable="true" />
@@ -38,7 +38,7 @@
             android:layout_height="48dp"
             android:layout_alignParentEnd="true"
             android:src="@android:drawable/ic_menu_search"
-            android:tint="#FFFFFF"
+            app:tint="#FFFFFF"
             android:padding="12dp"
             android:clickable="true"
             android:focusable="true" />
@@ -50,8 +50,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginTop="80dp"
             app:cardCornerRadius="25dp"
-            app:cardElevation="4dp"
-            android:background="#FFFFFF">
+            app:cardElevation="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -65,7 +64,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@android:drawable/ic_menu_search"
-                    android:tint="#999999" />
+                    app:tint="#999999" />
 
                 <EditText
                     android:id="@+id/etSearch"
@@ -77,7 +76,9 @@
                     android:background="@android:color/transparent"
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp"
-                    android:border="none" />
+                    android:inputType="text"
+                    android:autofillHints="no"
+                    android:contentDescription="Tìm kiếm món ăn" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
@@ -87,6 +88,7 @@
         android:id="@+id/rvMonAn"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/header"
         android:padding="16dp"
         android:clipToPadding="false" />
 
@@ -95,11 +97,12 @@
         android:id="@+id/fabAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_margin="24dp"
         android:src="@android:drawable/ic_input_add"
         app:tint="#FFFFFF"
         app:backgroundTint="#FF9800"
         app:elevation="6dp"
         android:contentDescription="Thêm món ăn" />
-</LinearLayout>
+</RelativeLayout>

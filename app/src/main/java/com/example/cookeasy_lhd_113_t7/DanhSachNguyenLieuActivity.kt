@@ -1,4 +1,3 @@
-<!-- filepath: d:\AndroidStudioProjects\CookEasy_LHD_113_T7\app\src\main\java\com\example\cookeasy_lhd_113_t7\DanhSachNguyenLieuActivity.kt -->
 package com.example.cookeasy_lhd_113_t7
 
 import android.content.Intent

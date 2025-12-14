@@ -19,10 +19,11 @@
             android:layout_height="48dp"
             android:layout_alignParentEnd="true"
             android:src="@android:drawable/ic_menu_manage"
-            android:tint="#FFFFFF"
+            app:tint="#FFFFFF"
             android:padding="12dp"
             android:clickable="true"
-            android:focusable="true" />
+            android:focusable="true"
+            android:contentDescription="Settings" />
 
         <ImageView
             android:id="@+id/ivLogo"
@@ -31,7 +32,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
             android:src="@mipmap/ic_launcher"
-            android:background="@drawable/circle_white_bg" />
+            android:background="@drawable/circle_white_bg"
+            android:contentDescription="Logo" />
 
         <TextView
             android:id="@+id/tvAppName"
@@ -87,9 +89,10 @@
                     android:layout_width="56dp"
                     android:layout_height="56dp"
                     android:src="@android:drawable/ic_menu_sort_by_size"
-                    android:tint="#FF9800"
+                    app:tint="#FF9800"
                     android:background="@drawable/circle_orange_light_bg"
-                    android:padding="12dp" />
+                    android:padding="12dp"
+                    android:contentDescription="Ingredients" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -125,9 +128,10 @@
                     android:layout_width="56dp"
                     android:layout_height="56dp"
                     android:src="@android:drawable/ic_menu_recent_history"
-                    android:tint="#FF9800"
+                    app:tint="#FF9800"
                     android:background="@drawable/circle_orange_light_bg"
-                    android:padding="12dp" />
+                    android:padding="12dp"
+                    android:contentDescription="Expiring" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -163,9 +167,10 @@
                     android:layout_width="56dp"
                     android:layout_height="56dp"
                     android:src="@android:drawable/ic_menu_gallery"
-                    android:tint="#FF9800"
+                    app:tint="#FF9800"
                     android:background="@drawable/circle_orange_light_bg"
-                    android:padding="12dp" />
+                    android:padding="12dp"
+                    android:contentDescription="Recipes" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -200,9 +205,10 @@
                     android:layout_width="56dp"
                     android:layout_height="56dp"
                     android:src="@android:drawable/ic_dialog_map"
-                    android:tint="#FF9800"
+                    app:tint="#FF9800"
                     android:background="@drawable/circle_orange_light_bg"
-                    android:padding="12dp" />
+                    android:padding="12dp"
+                    android:contentDescription="Suggest" />
 
                 <TextView
                     android:layout_width="wrap_content"

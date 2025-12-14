@@ -18,11 +18,12 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@android:drawable/ic_menu_revert"
-            android:tint="#FFFFFF"
+            app:tint="#FFFFFF"
             android:padding="12dp"
             android:clickable="true"
             android:focusable="true"
-            android:background="@drawable/circle_orange_bg" />
+            android:background="@drawable/circle_orange_bg"
+            android:contentDescription="Back" />
 
         <ImageView
             android:id="@+id/btnEdit"
@@ -31,11 +32,12 @@
             android:layout_toStartOf="@id/btnDelete"
             android:layout_marginEnd="12dp"
             android:src="@android:drawable/ic_menu_edit"
-            android:tint="#FFFFFF"
+            app:tint="#FFFFFF"
             android:padding="12dp"
             android:clickable="true"
             android:focusable="true"
-            android:background="@drawable/circle_orange_bg" />
+            android:background="@drawable/circle_orange_bg"
+            android:contentDescription="Edit" />
 
         <ImageView
             android:id="@+id/btnDelete"
@@ -43,11 +45,12 @@
             android:layout_height="48dp"
             android:layout_alignParentEnd="true"
             android:src="@android:drawable/ic_menu_delete"
-            android:tint="#FFFFFF"
+            app:tint="#FFFFFF"
             android:padding="12dp"
             android:clickable="true"
             android:focusable="true"
-            android:background="@drawable/circle_red_bg" />
+            android:background="@drawable/circle_red_bg"
+            android:contentDescription="Delete" />
 
         <ImageView
             android:id="@+id/ivNguyenLieu"
@@ -57,7 +60,8 @@
             android:layout_marginTop="80dp"
             android:src="@mipmap/ic_launcher"
             android:background="@drawable/circle_white_bg"
-            android:padding="20dp" />
+            android:padding="20dp"
+            android:contentDescription="Ingredient" />
 
         <TextView
             android:id="@+id/tvTenNguyenLieu"
@@ -123,9 +127,10 @@
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:src="@android:drawable/ic_menu_info_details"
-                    android:tint="#FFA726"
+                    app:tint="#FFA726"
                     android:background="@drawable/circle_icon_bg"
-                    android:padding="6dp" />
+                    android:padding="6dp"
+                    android:contentDescription="Info" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -164,9 +169,10 @@
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:src="@android:drawable/ic_menu_view"
-                    android:tint="#FFA726"
+                    app:tint="#FFA726"
                     android:background="@drawable/circle_icon_bg"
-                    android:padding="6dp" />
+                    android:padding="6dp"
+                    android:contentDescription="Quantity" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -204,9 +210,10 @@
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:src="@android:drawable/ic_menu_my_calendar"
-                    android:tint="#FFA726"
+                    app:tint="#FFA726"
                     android:background="@drawable/circle_icon_bg"
-                    android:padding="6dp" />
+                    android:padding="6dp"
+                    android:contentDescription="Expiry" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"

@@ -23,7 +23,8 @@
             android:layout_height="48dp"
             android:src="@mipmap/ic_launcher"
             android:background="@drawable/circle_orange_light_bg"
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:contentDescription="Icon" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -67,7 +68,8 @@
                     android:layout_width="12dp"
                     android:layout_height="12dp"
                     android:src="@android:drawable/ic_menu_my_calendar"
-                    android:tint="#2196F3" />
+                    app:tint="#2196F3"
+                    android:contentDescription="Calendar" />
 
                 <TextView
                     android:id="@+id/tvNgayHetHan"
@@ -95,6 +97,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:src="@android:drawable/stat_sys_warning"
-            android:tint="#F44336" />
+            app:tint="#F44336"
+            android:contentDescription="Warning" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

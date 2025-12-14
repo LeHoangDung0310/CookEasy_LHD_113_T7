@@ -21,8 +21,9 @@
             android:layout_height="64dp"
             android:src="@android:drawable/ic_menu_delete"
             android:background="@drawable/circle_red_light_bg"
-            android:tint="#F44336"
-            android:padding="16dp" />
+            app:tint="#F44336"
+            android:padding="16dp"
+            android:contentDescription="Delete" />
 
         <!-- Title -->
         <TextView

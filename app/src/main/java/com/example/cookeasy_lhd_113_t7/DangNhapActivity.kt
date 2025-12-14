@@ -11,10 +11,20 @@ class DangNhapActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.man_hinh_dang_nhap)
 
+        // Nút đăng nhập
+        findViewById<Button>(R.id.btnLogin).setOnClickListener {
+            // Chuyển sang Trang chủ
+            val intent = Intent(this, TrangChuActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        // Nút đăng ký
         findViewById<TextView>(R.id.tvRegister).setOnClickListener {
             startActivity(Intent(this, DangKyActivity::class.java))
         }
 
+        // Quên mật khẩu
         findViewById<TextView>(R.id.tvForgotPassword).setOnClickListener {
             startActivity(Intent(this, QuenMatKhauActivity::class.java))
         }

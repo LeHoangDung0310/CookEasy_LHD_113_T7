@@ -1,10 +1,26 @@
 package com.example.cookeasy_lhd_113_t7
 
+import com.google.firebase.database.Exclude
+
 data class NguyenLieu(
-    val id: Int,
-    val ten: String,
-    val icon: Int = R.mipmap.ic_launcher,
-    val soLuong: String = "",
-    val ngayHetHan: String = "",
-    val trangThai: String = "Còn hạn"
-)
+    var id: String = "",
+    var ten: String = "",
+    var danhMuc: String = "",
+    var soLuong: String = "",
+    var donVi: String = "",
+    var ngayHetHan: String = "",
+    var trangThai: String = "Còn hạn"
+) {
+    @Exclude
+    fun toMap(): Map<String, Any?> {
+        return mapOf(
+            "id" to id,
+            "ten" to ten,
+            "danhMuc" to danhMuc,
+            "soLuong" to soLuong,
+            "donVi" to donVi,
+            "ngayHetHan" to ngayHetHan,
+            "trangThai" to trangThai
+        )
+    }
+}

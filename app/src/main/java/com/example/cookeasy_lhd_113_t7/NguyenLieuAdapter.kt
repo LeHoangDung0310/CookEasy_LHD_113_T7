@@ -28,8 +28,15 @@ class NguyenLieuAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = danhSach[position]
         holder.tvTenNguyenLieu.text = item.ten
-        holder.tvTrangThai.text = item.trangThai
-        holder.ivIcon.setImageResource(item.icon)
+        
+        // Hiển thị trạng thái với số lượng nếu có
+        val trangThaiText = if (item.soLuong.isNotEmpty()) {
+            "${item.soLuong} - ${item.trangThai}"
+        } else {
+            item.trangThai
+        }
+        holder.tvTrangThai.text = trangThaiText
+        holder.ivIcon.setImageResource(R.mipmap.ic_launcher)
         
         // Set màu trang thái
         when {

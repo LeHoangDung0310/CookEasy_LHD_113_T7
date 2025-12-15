@@ -23,8 +23,8 @@ class ChiTietNguyenLieuActivity : AppCompatActivity() {
     private lateinit var tvTrangThai: TextView
     private lateinit var tvTenNguyenLieuDetail: TextView
     private lateinit var tvSoLuong: TextView
-    private lateinit var tvDanhMuc: TextView
     private lateinit var tvNgayHetHan: TextView
+    private lateinit var tvGhiChu: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,8 +40,8 @@ class ChiTietNguyenLieuActivity : AppCompatActivity() {
         tvTrangThai = findViewById(R.id.tvTrangThai)
         tvTenNguyenLieuDetail = findViewById(R.id.tvTenNguyenLieuDetail)
         tvSoLuong = findViewById(R.id.tvSoLuong)
-        tvDanhMuc = findViewById(R.id.tvDanhMuc)
         tvNgayHetHan = findViewById(R.id.tvNgayHetHan)
+        tvGhiChu = findViewById(R.id.tvGhiChu)
 
         findViewById<ImageView>(R.id.btnBack).setOnClickListener {
             finish()
@@ -89,8 +89,8 @@ class ChiTietNguyenLieuActivity : AppCompatActivity() {
         tvTrangThai.text = nguyenLieu.trangThai
         tvTenNguyenLieuDetail.text = nguyenLieu.ten
         tvSoLuong.text = nguyenLieu.soLuong
-        tvDanhMuc.text = nguyenLieu.danhMuc
         tvNgayHetHan.text = nguyenLieu.ngayHetHan.ifEmpty { "Chưa có" }
+        tvGhiChu.text = nguyenLieu.ghiChu.ifEmpty { "Không có ghi chú" }
 
         // Set màu cho trạng thái
         when {
@@ -115,17 +115,17 @@ class ChiTietNguyenLieuActivity : AppCompatActivity() {
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
 
         val etTen = dialog.findViewById<TextInputEditText>(R.id.etTenNguyenLieu)
-        val etDanhMuc = dialog.findViewById<TextInputEditText>(R.id.etDanhMuc)
         val etSoLuong = dialog.findViewById<TextInputEditText>(R.id.etSoLuong)
         val etDonVi = dialog.findViewById<TextInputEditText>(R.id.etDonVi)
         val etNgayHetHan = dialog.findViewById<TextInputEditText>(R.id.etNgayHetHan)
+        val etGhiChu = dialog.findViewById<TextInputEditText>(R.id.etGhiChu)
 
         // Điền dữ liệu hiện tại
         etTen.setText(nguyenLieu.ten)
-        etDanhMuc.setText(nguyenLieu.danhMuc)
         etSoLuong.setText(nguyenLieu.soLuong.split(" ").getOrNull(0) ?: "")
         etDonVi.setText(nguyenLieu.donVi)
         etNgayHetHan.setText(nguyenLieu.ngayHetHan)
+        etGhiChu.setText(nguyenLieu.ghiChu)
 
         // Date picker
         etNgayHetHan.setOnClickListener {
@@ -147,22 +147,22 @@ class ChiTietNguyenLieuActivity : AppCompatActivity() {
 
         dialog.findViewById<Button>(R.id.btnLuu).setOnClickListener {
             val ten = etTen.text.toString().trim()
-            val danhMuc = etDanhMuc.text.toString().trim()
             val soLuong = etSoLuong.text.toString().trim()
             val donVi = etDonVi.text.toString().trim()
             val ngayHetHan = etNgayHetHan.text.toString().trim()
+            val ghiChu = etGhiChu.text.toString().trim()
 
-            if (ten.isEmpty() || danhMuc.isEmpty() || soLuong.isEmpty() || donVi.isEmpty()) {
+            if (ten.isEmpty() || soLuong.isEmpty() || donVi.isEmpty()) {
                 Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             // Cập nhật đối tượng
             nguyenLieu.ten = ten
-            nguyenLieu.danhMuc = danhMuc
             nguyenLieu.soLuong = "$soLuong $donVi"
             nguyenLieu.donVi = donVi
             nguyenLieu.ngayHetHan = ngayHetHan
+            nguyenLieu.ghiChu = ghiChu
 
             // Lưu vào Firebase
             firebaseHelper.capNhatNguyenLieu(

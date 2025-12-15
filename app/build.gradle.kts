@@ -62,5 +62,5 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
     implementation(platform("com.google.firebase:firebase-bom:34.7.0"))
     implementation("com.google.firebase:firebase-analytics")
-    implementation("com.google.firebase:firebase-database-ktx")
+    implementation("com.google.firebase:firebase-database-ktx:20.3.0")
 }

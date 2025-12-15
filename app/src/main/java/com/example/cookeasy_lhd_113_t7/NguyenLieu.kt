@@ -5,10 +5,11 @@ import com.google.firebase.database.Exclude
 data class NguyenLieu(
     var id: String = "",
     var ten: String = "",
-    var danhMuc: String = "",
+    var hinhAnh: String = "", // URL ảnh hoặc tên icon
     var soLuong: String = "",
     var donVi: String = "",
     var ngayHetHan: String = "",
+    var ghiChu: String = "",
     var trangThai: String = "Còn hạn"
 ) {
     @Exclude
@@ -16,10 +17,11 @@ data class NguyenLieu(
         return mapOf(
             "id" to id,
             "ten" to ten,
-            "danhMuc" to danhMuc,
+            "hinhAnh" to hinhAnh,
             "soLuong" to soLuong,
             "donVi" to donVi,
             "ngayHetHan" to ngayHetHan,
+            "ghiChu" to ghiChu,
             "trangThai" to trangThai
         )
     }

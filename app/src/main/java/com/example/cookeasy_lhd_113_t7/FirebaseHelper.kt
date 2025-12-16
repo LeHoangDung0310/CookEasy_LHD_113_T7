@@ -32,7 +32,13 @@ class FirebaseHelper {
                 val danhSach = mutableListOf<NguyenLieu>()
                 for (childSnapshot in snapshot.children) {
                     val nguyenLieu = childSnapshot.getValue(NguyenLieu::class.java)
-                    nguyenLieu?.let { danhSach.add(it) }
+                    if (nguyenLieu != null) {
+                        // Nếu id bị rỗng thì gán key của snapshot
+                        if (nguyenLieu.id.isEmpty()) {
+                            nguyenLieu.id = childSnapshot.key ?: ""
+                        }
+                        danhSach.add(nguyenLieu)
+                    }
                 }
                 onSuccess(danhSach)
             }

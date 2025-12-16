@@ -300,7 +300,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:backgroundTint="#9E9E9E"
+                android:backgroundTint="#FF9800"
                 android:layout_marginBottom="12dp" />
 
             <Button

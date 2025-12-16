@@ -52,7 +52,10 @@ class NguyenLieuAdapter(
         }
         
         holder.itemView.setOnClickListener {
-            onItemClick(item)
+            val context = holder.itemView.context
+            val intent = Intent(context, ChiTietNguyenLieuActivity::class.java)
+            intent.putExtra("NGUYEN_LIEU_ID", item.id)
+            context.startActivity(intent)
         }
     }
 

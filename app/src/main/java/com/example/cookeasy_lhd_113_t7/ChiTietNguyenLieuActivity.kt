@@ -61,8 +61,8 @@ class ChiTietNguyenLieuActivity : AppCompatActivity() {
 
     private fun taiDuLieu() {
         if (nguyenLieuId.isEmpty()) {
-            Toast.makeText(this, "Lỗi: Không tìm thấy ID", Toast.LENGTH_SHORT).show()
-            finish()
+            Toast.makeText(this, "Lỗi: Không tìm thấy ID nguyên liệu để xem chi tiết!", Toast.LENGTH_LONG).show()
+            // Không gọi finish() ngay để bạn thấy lỗi rõ ràng
             return
         }
 
@@ -73,13 +73,13 @@ class ChiTietNguyenLieuActivity : AppCompatActivity() {
                     currentNguyenLieu = nguyenLieu
                     hienThiThongTin(nguyenLieu)
                 } else {
-                    Toast.makeText(this, "Không tìm thấy nguyên liệu", Toast.LENGTH_SHORT).show()
-                    finish()
+                    Toast.makeText(this, "Không tìm thấy nguyên liệu với ID: $nguyenLieuId", Toast.LENGTH_LONG).show()
+                    // Không gọi finish() ngay để debug
                 }
             },
             onFailure = { error ->
-                Toast.makeText(this, "Lỗi: $error", Toast.LENGTH_SHORT).show()
-                finish()
+                Toast.makeText(this, "Lỗi khi lấy chi tiết nguyên liệu: $error", Toast.LENGTH_LONG).show()
+                // Không gọi finish() ngay để debug
             }
         )
     }

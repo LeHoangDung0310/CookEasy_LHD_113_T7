@@ -45,9 +45,20 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/tvAppSlogan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvAppName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:text="Tủ lạnh thông minh"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvAppSlogan"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="4dp"
             android:text="Danh sách nguyên liệu"

@@ -87,9 +87,21 @@
             android:exported="false"
             android:theme="@style/Theme.CookEasy_LHD_113_T7" />
             
+
+        <!-- Chi tiết nguyên liệu Activity -->
+        <activity
+            android:name=".ChiTietNguyenLieuActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CookEasy_LHD_113_T7" />
+
         <!-- Thêm món ăn Activity -->
         <activity
             android:name=".ThemMonAnActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CookEasy_LHD_113_T7" />
+        
+        <activity
+            android:name=".ChiTietMonAnActivity"
             android:exported="false"
             android:theme="@style/Theme.CookEasy_LHD_113_T7" />
 

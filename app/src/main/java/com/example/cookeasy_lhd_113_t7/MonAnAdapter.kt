@@ -16,7 +16,6 @@ class MonAnAdapter(
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val ivIcon: ImageView = view.findViewById(R.id.ivIcon)
         val tvTenMonAn: TextView = view.findViewById(R.id.tvTenMonAn)
-        val tvMoTa: TextView = view.findViewById(R.id.tvMoTa)
         val tvThoiGian: TextView = view.findViewById(R.id.tvThoiGian)
         val tvDoKho: TextView = view.findViewById(R.id.tvDoKho)
     }
@@ -30,7 +29,6 @@ class MonAnAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = danhSach[position]
         holder.tvTenMonAn.text = item.ten
-        holder.tvMoTa.text = item.moTa
         holder.tvThoiGian.text = item.thoiGian
         holder.tvDoKho.text = item.doKho
         holder.ivIcon.setImageResource(R.mipmap.ic_launcher)

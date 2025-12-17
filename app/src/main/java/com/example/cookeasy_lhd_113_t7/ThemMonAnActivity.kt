@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 
 class ThemMonAnActivity : AppCompatActivity() {
     private val nguyenLieuList = mutableListOf<String>() // Lưu id nguyên liệu
-    private val buocLamList = mutableListOf<String>()
     private val danhSachNguyenLieu = mutableListOf<NguyenLieu>()
     private lateinit var nguyenLieuAdapter: NguyenLieuAdapter
 
@@ -47,25 +46,20 @@ class ThemMonAnActivity : AppCompatActivity() {
             showSelectNguyenLieuDialog()
         }
 
-        findViewById<Button>(R.id.btnThemBuoc).setOnClickListener {
-            showAddDialog("Thêm bước làm") { text ->
-                if (text.isNotBlank()) {
-                    buocLamList.add(text)
-                    Toast.makeText(this, "Đã thêm bước làm", Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
+        // ĐÃ BỎ nút thêm bước làm, không còn xử lý buocLamList nữa
 
         findViewById<Button>(R.id.btnLuuMonAn).setOnClickListener {
             val etTen = findViewById<TextInputEditText>(R.id.etTenMonAn)
             val etMoTa = findViewById<TextInputEditText>(R.id.etMoTa)
             val etThoiGian = findViewById<TextInputEditText>(R.id.etThoiGian)
             val etDoKho = findViewById<TextInputEditText>(R.id.etDoKho)
+            val etCachLam = findViewById<TextInputEditText>(R.id.etCachLam)
 
             val ten = etTen?.text?.toString()?.trim() ?: ""
             val moTa = etMoTa?.text?.toString()?.trim() ?: ""
             val thoiGian = etThoiGian?.text?.toString()?.trim() ?: ""
             val doKho = etDoKho?.text?.toString()?.trim() ?: ""
+            val cachLam = etCachLam?.text?.toString()?.trim() ?: ""
 
             if (ten.isEmpty()) {
                 Toast.makeText(this, "Vui lòng nhập tên món ăn", Toast.LENGTH_SHORT).show()
@@ -73,7 +67,7 @@ class ThemMonAnActivity : AppCompatActivity() {
             }
 
             val id = FirebaseDatabase.getInstance().getReference("monAn").push().key ?: System.currentTimeMillis().toString()
-            val monAn = MonAn(id, ten, moTa, thoiGian, doKho, nguyenLieuList.toList(), buocLamList.toList())
+            val monAn = MonAn(id, ten, moTa, thoiGian, doKho, nguyenLieuList.toList(), cachLam)
             FirebaseDatabase.getInstance().getReference("monAn").child(id).setValue(monAn)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Thêm món ăn thành công", Toast.LENGTH_SHORT).show()

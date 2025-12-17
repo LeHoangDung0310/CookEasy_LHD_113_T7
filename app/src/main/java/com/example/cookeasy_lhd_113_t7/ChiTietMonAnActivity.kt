@@ -11,11 +11,13 @@ class ChiTietMonAnActivity : AppCompatActivity() {
     private var currentMonAn: MonAn? = null
     private val danhSachNguyenLieu = mutableListOf<NguyenLieu>()
 
-    private lateinit var tvTenMonAn: android.widget.TextView
-    private lateinit var tvThoiGian: android.widget.TextView
-    private lateinit var tvMoTa: android.widget.TextView
-    private lateinit var tvNguyenLieu: android.widget.TextView
-    private lateinit var tvBuocLam: android.widget.TextView
+    // Only use detail TextViews for display
+    private lateinit var tvTenMonAnDetail: android.widget.TextView
+    private lateinit var tvThoiGianDetail: android.widget.TextView
+    private lateinit var tvDoKhoDetail: android.widget.TextView
+    private lateinit var tvMoTaDetail: android.widget.TextView
+    private lateinit var tvNguyenLieuDetail: android.widget.TextView
+    private lateinit var tvCachLamDetail: android.widget.TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,11 +25,12 @@ class ChiTietMonAnActivity : AppCompatActivity() {
 
         monAnId = intent.getStringExtra("MON_AN_ID") ?: ""
 
-        tvTenMonAn = findViewById(R.id.tvDishName)
-        tvThoiGian = findViewById(R.id.tvCookTime)
-        tvMoTa = findViewById(R.id.tvDescription)
-        tvNguyenLieu = findViewById(R.id.tvIngredients)
-        tvBuocLam = findViewById(R.id.tvInstructions)
+        tvTenMonAnDetail = findViewById(R.id.tvDishNameDetail)
+        tvThoiGianDetail = findViewById(R.id.tvCookTimeDetail)
+        tvDoKhoDetail = findViewById(R.id.tvDoKhoDetail)
+        tvMoTaDetail = findViewById(R.id.tvDescription)
+        tvNguyenLieuDetail = findViewById(R.id.tvIngredients)
+        tvCachLamDetail = findViewById(R.id.tvInstructions)
 
         findViewById<ImageView>(R.id.btnBack).setOnClickListener { finish() }
         findViewById<ImageView>(R.id.btnEdit).setOnClickListener { showEditDialog() }
@@ -65,17 +68,19 @@ class ChiTietMonAnActivity : AppCompatActivity() {
     }
 
     private fun hienThiThongTin(monAn: MonAn) {
-        tvTenMonAn.text = monAn.ten
-        tvThoiGian.text = monAn.thoiGian
-        tvMoTa.text = monAn.moTa
         // Hiển thị tên nguyên liệu thay vì id
-        if (danhSachNguyenLieu.isEmpty()) {
-            tvNguyenLieu.text = monAn.nguyenLieuList.joinToString("\n")
+        val nguyenLieuStr = if (danhSachNguyenLieu.isEmpty()) {
+            monAn.nguyenLieuList.joinToString("\n")
         } else {
-            val tenNguyenLieu = danhSachNguyenLieu.filter { monAn.nguyenLieuList.contains(it.id) }.joinToString("\n") { it.ten }
-            tvNguyenLieu.text = tenNguyenLieu
+            danhSachNguyenLieu.filter { monAn.nguyenLieuList.contains(it.id) }.joinToString("\n") { it.ten }
         }
-        tvBuocLam.text = monAn.buocLamList.withIndex().joinToString("\n") { (i, b) -> "Bước ${i+1}: $b" }
+
+        tvTenMonAnDetail.text = monAn.ten
+        tvThoiGianDetail.text = monAn.thoiGian
+        tvDoKhoDetail.text = monAn.doKho
+        tvMoTaDetail.text = monAn.moTa
+        tvNguyenLieuDetail.text = nguyenLieuStr
+        tvCachLamDetail.text = monAn.cachLam
     }
 
     private fun showEditDialog() {
@@ -90,7 +95,7 @@ class ChiTietMonAnActivity : AppCompatActivity() {
         val etDoKho = dialog.findViewById<android.widget.EditText?>(R.id.etDoKho)
         val btnChonNguyenLieu = dialog.findViewById<Button?>(R.id.btnChonNguyenLieu)
         val tvNguyenLieuDaChon = dialog.findViewById<android.widget.TextView?>(R.id.tvNguyenLieuDaChon)
-        val etBuocLam = dialog.findViewById<android.widget.EditText?>(R.id.etBuocLam)
+        val etCachLam = dialog.findViewById<android.widget.EditText?>(R.id.etCachLam)
 
         etTen?.setText(monAn.ten)
         etMoTa?.setText(monAn.moTa)
@@ -100,7 +105,7 @@ class ChiTietMonAnActivity : AppCompatActivity() {
         val selectedNguyenLieu = danhSachNguyenLieu.filter { monAn.nguyenLieuList.contains(it.id) }
         tvNguyenLieuDaChon?.text = selectedNguyenLieu.joinToString(", ") { it.ten }
         tvNguyenLieuDaChon?.tag = monAn.nguyenLieuList.toMutableList()
-        etBuocLam?.setText(monAn.buocLamList.joinToString("\n"))
+        etCachLam?.setText(monAn.cachLam)
 
         // Chọn lại nguyên liệu
         btnChonNguyenLieu?.setOnClickListener {
@@ -140,14 +145,14 @@ class ChiTietMonAnActivity : AppCompatActivity() {
             val thoiGian = etThoiGian?.text?.toString()?.trim() ?: ""
             val doKho = etDoKho?.text?.toString()?.trim() ?: ""
             val nguyenLieuList = (tvNguyenLieuDaChon?.tag as? MutableList<String>) ?: monAn.nguyenLieuList
-            val buocLamList = etBuocLam?.text?.toString()?.split("\n")?.map { it.trim() }?.filter { it.isNotEmpty() } ?: emptyList()
+            val cachLam = etCachLam?.text?.toString()?.trim() ?: ""
 
             if (ten.isEmpty()) {
                 android.widget.Toast.makeText(this, "Vui lòng nhập tên món ăn", android.widget.Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            val capNhat = MonAn(monAn.id, ten, moTa, thoiGian, doKho, nguyenLieuList, buocLamList)
+            val capNhat = MonAn(monAn.id, ten, moTa, thoiGian, doKho, nguyenLieuList, cachLam)
             com.google.firebase.database.FirebaseDatabase.getInstance().getReference("monAn").child(monAn.id)
                 .setValue(capNhat)
                 .addOnSuccessListener {

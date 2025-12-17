@@ -99,151 +99,157 @@
                     android:text="30 phút"
                     android:textColor="#FFFFFF"
                     android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvDoKho"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Độ khó"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
             </LinearLayout>
         </RelativeLayout>
 
-        <!-- Content -->
-        <LinearLayout
+        <!-- Content đẹp hơn với CardView -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/header"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_margin="16dp"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="6dp"
+            android:background="@android:color/white">
 
-            <!-- Mô tả Card -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Mô tả"
-                        android:textColor="#FF9800"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/tvDescription"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Mô tả món ăn..."
-                        android:textColor="#333333"
-                        android:textSize="14sp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- Nguyên liệu Card -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Nguyên liệu"
-                        android:textColor="#FF9800"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/tvIngredients"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Danh sách nguyên liệu..."
-                        android:textColor="#333333"
-                        android:textSize="14sp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- Cách làm Card -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Cách làm"
-                        android:textColor="#FF9800"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/tvInstructions"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Hướng dẫn làm món..."
-                        android:textColor="#333333"
-                        android:textSize="14sp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- Buttons -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp">
+                android:orientation="vertical"
+                android:padding="20dp">
 
-                <Button
-                    android:id="@+id/btnChinhSua"
-                    android:layout_width="0dp"
-                    android:layout_height="56dp"
-                    android:layout_weight="1"
-                    android:text="Chỉnh sửa"
-                    android:textColor="#FFFFFF"
+                <!-- Tên món ăn -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tên món ăn"
+                    android:textColor="#FF9800"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:backgroundTint="#FF9800"
-                    android:drawableStart="@android:drawable/ic_menu_edit"
-                    android:drawableTint="#FFFFFF"
-                    android:layout_marginEnd="8dp" />
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvDishNameDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="12dp"
+                    android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/btnXoa"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="0dp"
-                    android:layout_height="56dp"
-                    android:layout_weight="1"
-                    android:text="Xóa"
-                    android:textColor="#F44336"
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#EEEEEE"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Thời gian & Độ khó -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Thời gian: "
+                        android:textColor="#FF9800"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tvCookTimeDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#333333"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="   |   Độ khó: "
+                        android:textColor="#FF9800"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tvDoKhoDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#333333"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#EEEEEE"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Mô tả -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mô tả"
+                    android:textColor="#FF9800"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:drawableStart="@android:drawable/ic_menu_delete"
-                    android:drawableTint="#F44336"
-                    android:layout_marginStart="8dp" />
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#333333"
+                    android:textSize="15sp"
+                    android:layout_marginBottom="12dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#EEEEEE"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Nguyên liệu -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nguyên liệu"
+                    android:textColor="#FF9800"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvIngredients"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#333333"
+                    android:textSize="15sp"
+                    android:layout_marginBottom="12dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#EEEEEE"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Cách làm -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cách làm"
+                    android:textColor="#FF9800"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvInstructions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#333333"
+                    android:textSize="15sp"
+                    android:layout_marginBottom="4dp" />
             </LinearLayout>
-        </LinearLayout>
+        </androidx.cardview.widget.CardView>
     </RelativeLayout>
 </ScrollView>

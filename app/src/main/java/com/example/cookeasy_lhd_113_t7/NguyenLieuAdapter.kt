@@ -17,6 +17,8 @@ class NguyenLieuAdapter(
         val ivIcon: ImageView = view.findViewById(R.id.ivIcon)
         val tvTenNguyenLieu: TextView = view.findViewById(R.id.tvTenNguyenLieu)
         val tvTrangThai: TextView = view.findViewById(R.id.tvTrangThai)
+        val tvNgayHetHan: TextView = view.findViewById(R.id.tvNgayHetHan)
+        val tvSoLuong: TextView = view.findViewById(R.id.tvSoLuong)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -28,17 +30,18 @@ class NguyenLieuAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = danhSach[position]
         holder.tvTenNguyenLieu.text = item.ten
-        
-        // Hiển thị trạng thái với số lượng nếu có
-        val trangThaiText = if (item.soLuong.isNotEmpty()) {
-            "${item.soLuong} - ${item.trangThai}"
-        } else {
-            item.trangThai
-        }
-        holder.tvTrangThai.text = trangThaiText
+
+        // Hiển thị số lượng
+        holder.tvSoLuong.text = item.soLuong
+
+        // Hiển thị ngày hết hạn
+        holder.tvNgayHetHan.text = item.ngayHetHan
+
+        // Hiển thị trạng thái
+        holder.tvTrangThai.text = item.trangThai
         holder.ivIcon.setImageResource(R.mipmap.ic_launcher)
-        
-        // Set màu trang thái
+
+        // Set màu trạng thái
         when {
             item.trangThai.contains("Hết hạn", ignoreCase = true) -> {
                 holder.tvTrangThai.setTextColor(holder.itemView.context.getColor(android.R.color.holo_red_dark))
@@ -50,7 +53,7 @@ class NguyenLieuAdapter(
                 holder.tvTrangThai.setTextColor(holder.itemView.context.getColor(android.R.color.holo_orange_dark))
             }
         }
-        
+
         holder.itemView.setOnClickListener {
             onItemClick(item)
         }

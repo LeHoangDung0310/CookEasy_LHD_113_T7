@@ -9,28 +9,22 @@
     <RelativeLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="280dp"
         android:background="#FF9800"
         android:padding="20dp">
 
+
+        <!-- Nút Back -->
         <ImageView
             android:id="@+id/btnBack"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:layout_alignParentStart="true"
             android:src="@android:drawable/ic_menu_revert"
             app:tint="#FFFFFF"
             android:padding="12dp"
             android:clickable="true"
             android:focusable="true" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="Danh sách món ăn"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/btnSearch"
@@ -43,44 +37,39 @@
             android:clickable="true"
             android:focusable="true" />
 
-        <!-- Search Bar -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="80dp"
-            app:cardCornerRadius="25dp"
-            app:cardElevation="4dp">
+        <TextView
+            android:id="@+id/ivLogo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="👨‍🍳"
+            android:textSize="54sp"
+            android:background="@drawable/circle_white_bg"
+            android:contentDescription="Logo" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp">
+        <TextView
+            android:id="@+id/tvAppName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivLogo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="CookEasy"
+            android:textColor="#000000"
+            android:textSize="32sp"
+            android:textStyle="bold" />
 
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@android:drawable/ic_menu_search"
-                    app:tint="#999999" />
-
-                <EditText
-                    android:id="@+id/etSearch"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:hint="Tìm kiếm món ăn..."
-                    android:textSize="14sp"
-                    android:background="@android:color/transparent"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:inputType="text"
-                    android:autofillHints="no"
-                    android:contentDescription="Tìm kiếm món ăn" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvAppName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            android:text="Danh sách món ăn"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
     </RelativeLayout>
 
     <!-- RecyclerView List -->

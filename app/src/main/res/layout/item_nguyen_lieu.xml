@@ -23,7 +23,9 @@ android:foreground="?android:attr/selectableItemBackground">
 		android:layout_height="48dp"
 		android:src="@drawable/nguyenlieu"
 		android:background="@drawable/circle_orange_light_bg"
-		android:padding="8dp"
+		android:padding="0dp"
+		android:scaleType="centerCrop"
+		android:clipToOutline="true"
 		android:contentDescription="Icon" />
 
 	<LinearLayout

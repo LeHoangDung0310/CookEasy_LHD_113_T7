@@ -65,7 +65,7 @@
                         android:id="@+id/ivIconPreview"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@mipmap/ic_launcher"
+                        android:src="@android:drawable/ic_menu_camera"
                         android:background="@drawable/circle_orange_light_bg"
                         android:padding="16dp" />
 

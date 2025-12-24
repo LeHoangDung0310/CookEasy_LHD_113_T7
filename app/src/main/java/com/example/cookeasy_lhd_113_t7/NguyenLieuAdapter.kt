@@ -39,7 +39,6 @@ class NguyenLieuAdapter(
 
         // Hiển thị trạng thái
         holder.tvTrangThai.text = item.trangThai
-        holder.ivIcon.setImageResource(R.mipmap.ic_launcher)
 
         // Set màu trạng thái
         when {

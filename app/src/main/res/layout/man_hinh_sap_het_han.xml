@@ -189,8 +189,8 @@
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:src="@drawable/ic_milk"
-                    android:background="@drawable/circle_gray_bg"
-                    android:padding="6dp" />
+                    android:scaleType="centerCrop"
+                     />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -232,7 +232,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="22/11/2025"
+                            android:text="27/12/2025"
                             android:textColor="#666666"
                             android:textSize="13sp" />
                     </LinearLayout>
@@ -284,8 +284,7 @@
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:src="@drawable/ic_egg"
-                    android:background="@drawable/circle_gray_bg"
-                    android:padding="6dp" />
+                    android:scaleType="centerCrop" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -327,7 +326,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="23/11/2025"
+                            android:text="12/1/2025"
                             android:textColor="#666666"
                             android:textSize="13sp" />
                     </LinearLayout>
@@ -351,7 +350,6 @@
                 android:text="Còn 2 ngày"
                 android:textColor="#FF9800"
                 android:textSize="13sp"
-                android:background="@drawable/bg_status_tag_orange"
                 android:paddingLeft="12dp"
                 android:paddingRight="12dp"
                 android:paddingTop="4dp"
@@ -379,8 +377,7 @@
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:src="@drawable/ic_tomato"
-                    android:background="@drawable/circle_gray_bg"
-                    android:padding="6dp" />
+                    android:scaleType="centerCrop" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -422,7 +419,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="24/11/2025"
+                            android:text="24/1/2025"
                             android:textColor="#666666"
                             android:textSize="13sp" />
                     </LinearLayout>
@@ -446,7 +443,6 @@
                 android:text="Còn 3 ngày"
                 android:textColor="#FF9800"
                 android:textSize="13sp"
-                android:background="@drawable/bg_status_tag_orange"
                 android:paddingLeft="12dp"
                 android:paddingRight="12dp"
                 android:paddingTop="4dp"

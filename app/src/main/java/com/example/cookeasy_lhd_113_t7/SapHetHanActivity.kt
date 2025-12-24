@@ -16,8 +16,5 @@ class SapHetHanActivity : AppCompatActivity() {
         }
 
         // Setup RecyclerView
-        val recyclerView = findViewById<RecyclerView>(R.id.rvSapHetHan)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        // recyclerView.adapter = SapHetHanAdapter(danhSach)
     }
 }

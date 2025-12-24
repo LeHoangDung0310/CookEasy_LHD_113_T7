@@ -105,6 +105,11 @@
             android:exported="false"
             android:theme="@style/Theme.CookEasy_LHD_113_T7" />
 
+        <activity
+            android:name=".DeXuatMonAnActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CookEasy_LHD_113_T7" />
+
     </application>
 
 </manifest>

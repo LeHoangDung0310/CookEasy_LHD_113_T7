@@ -42,10 +42,10 @@
             android:layout_height="100dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="70dp"
-            android:src="@android:drawable/ic_menu_myplaces"
-            app:tint="#2196F3"
+            android:src="@drawable/anhdaidien"
             android:background="@drawable/circle_white_bg"
-            android:padding="24dp"
+            android:scaleType="centerCrop"
+            android:clipToOutline="true"
             android:contentDescription="Avatar" />
 
         <TextView
@@ -140,7 +140,7 @@
                                 android:id="@+id/tvHoTen"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Nguyễn Văn A"
+                                android:text="Lê Hoàng Dũng"
                                 android:textColor="#000000"
                                 android:textSize="16sp"
                                 android:layout_marginTop="4dp" />
@@ -186,7 +186,7 @@
                                 android:id="@+id/tvEmailInfo"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="nguyenvana@gmail.com"
+                                android:text="ledung012003@gmail.com"
                                 android:textColor="#000000"
                                 android:textSize="16sp"
                                 android:layout_marginTop="4dp" />

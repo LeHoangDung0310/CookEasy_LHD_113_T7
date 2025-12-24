@@ -71,9 +71,10 @@
             android:layout_height="140dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="32dp"
-            android:src="@mipmap/ic_launcher"
             android:background="@drawable/circle_white_bg"
-            android:padding="24dp"
+            android:src="@drawable/nguyenlieu"
+            android:scaleType="centerCrop"
+            android:clipToOutline="true"
             android:contentDescription="Ingredient" />
 
         <!-- Tên nguyên liệu lớn -->

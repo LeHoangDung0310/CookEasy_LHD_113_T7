@@ -59,9 +59,10 @@
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_centerInParent="true"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/img_mon_an"
                 android:background="@drawable/circle_white_bg"
-                android:padding="20dp"
+                android:scaleType="centerCrop"
+                android:clipToOutline="true"
                 android:contentDescription="Hình món ăn" />
 
             <TextView

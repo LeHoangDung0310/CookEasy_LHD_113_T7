@@ -19,6 +19,11 @@ class ChiTietMonAnActivity : AppCompatActivity() {
     private lateinit var tvNguyenLieuDetail: android.widget.TextView
     private lateinit var tvCachLamDetail: android.widget.TextView
 
+    // Header TextViews
+    private lateinit var tvDishNameHeader: android.widget.TextView
+    private lateinit var tvCookTimeHeader: android.widget.TextView
+    private lateinit var tvDoKhoHeader: android.widget.TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.man_hinh_chi_tiet_mon_an)
@@ -31,6 +36,10 @@ class ChiTietMonAnActivity : AppCompatActivity() {
         tvMoTaDetail = findViewById(R.id.tvDescription)
         tvNguyenLieuDetail = findViewById(R.id.tvIngredients)
         tvCachLamDetail = findViewById(R.id.tvInstructions)
+
+        tvDishNameHeader = findViewById(R.id.tvDishName)
+        tvCookTimeHeader = findViewById(R.id.tvCookTime)
+        tvDoKhoHeader = findViewById(R.id.tvDoKho)
 
         findViewById<ImageView>(R.id.btnBack).setOnClickListener { finish() }
         findViewById<ImageView>(R.id.btnEdit).setOnClickListener { showEditDialog() }
@@ -81,6 +90,11 @@ class ChiTietMonAnActivity : AppCompatActivity() {
         tvMoTaDetail.text = monAn.moTa
         tvNguyenLieuDetail.text = nguyenLieuStr
         tvCachLamDetail.text = monAn.cachLam
+
+        // Update header
+        tvDishNameHeader.text = monAn.ten
+        tvCookTimeHeader.text = monAn.thoiGian
+        tvDoKhoHeader.text = monAn.doKho
     }
 
     private fun showEditDialog() {

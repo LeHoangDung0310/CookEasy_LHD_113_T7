@@ -31,7 +31,6 @@ class MonAnAdapter(
         holder.tvTenMonAn.text = item.ten
         holder.tvThoiGian.text = item.thoiGian
         holder.tvDoKho.text = item.doKho
-        holder.ivIcon.setImageResource(R.mipmap.ic_launcher)
         holder.itemView.setOnClickListener {
             onItemClick(item)
         }

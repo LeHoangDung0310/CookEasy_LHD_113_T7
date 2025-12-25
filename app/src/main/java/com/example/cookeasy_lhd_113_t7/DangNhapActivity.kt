@@ -19,14 +19,13 @@ class DangNhapActivity : AppCompatActivity() {
             finish()
         }
 
-        // Nút đăng ký
-        findViewById<TextView>(R.id.tvRegister).setOnClickListener {
-            startActivity(Intent(this, DangKyActivity::class.java))
-        }
-
         // Quên mật khẩu
         findViewById<TextView>(R.id.tvForgotPassword).setOnClickListener {
             startActivity(Intent(this, QuenMatKhauActivity::class.java))
+        }
+
+        findViewById<TextView>(R.id.tvRegister).setOnClickListener {
+            startActivity(Intent(this, DangKyActivity::class.java))
         }
     }
 }
